@@ -7,10 +7,11 @@
       // mobile backendアプリとの連携
       var ncmb = new NCMB("854baab8104c1170cdcfe46463042d1414a03926df18797830ab72eb614a7a6e","11d35d16c9952eebac9b05e96c34fcdd9e4c138072be58d6b839a14a2f2dc05b");
       var TestClass = ncmb.DataStore("TestClass");
-
+function set(){
+var a=document.getElementById("a");
 // データストアへの登録
 var testClass = new TestClass();
-testClass.set("message", "Hello, NCMB!");
+testClass.set("message", a);
 testClass.save()
          .then(function(){
             // 保存に成功した場合の処理
@@ -18,12 +19,12 @@ testClass.save()
          .catch(function(err){
             // 保存に失敗した場合の処理
           });
+}
 </script>
-<style>
-</style>
+
 </head>
 <body>
-<script>
-</script>
+<textarea id="a"></textarea>
+<button onClick="set();">セット</button>
 </body>
 </html>
